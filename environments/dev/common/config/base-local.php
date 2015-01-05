@@ -6,7 +6,7 @@ return [
         ],
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=127.0.0.1;dbname=yiipro', // localhost is much slower than 127.0.0.1
+            'dsn' => 'mysql:host=localhost;dbname=yiipro', // localhost is much slower than 127.0.0.1
             'username' => 'root',
             'password' => 'mavi1233',
             'charset' => 'utf8'
