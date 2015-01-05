@@ -4,10 +4,13 @@ Options +SymLinksIfOwnerMatch
 IndexIgnore */*
 
 RewriteEngine on
+RewriteCond %{HTTP_HOST} ^(www.)?promosos.com$
+RewriteCond %{REQUEST_URI} !^/yiipro/ 
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
-RewriteCond %{HTTP_HOST} ^(www.)?promosos.com$
-RewriteCond %{REQUEST_URI} !^/yiipro/frontend/web
+RewriteRule ^(.*)$ /yiipro/$1 
 
-RewriteRule ^(.*)$ /yiipro/frontend/web/$1 [L]
+RewriteCond %{HTTP_HOST} ^(www.)?promosos.com$ 
+RewriteRule ^(/)?$ yiipro/index.php [L]
