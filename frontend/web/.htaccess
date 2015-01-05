@@ -1,5 +1,13 @@
-RewriteEngine On
-RewriteBase /yiipro/frontend/web/
+AddHandler application/x-httpd-php53s .php .html
+
+Options +SymLinksIfOwnerMatch
+IndexIgnore */*
+
+RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php/$1 [L,QSA]
+
+RewriteCond %{HTTP_HOST} ^(www.)?promosos.com$
+RewriteCond %{REQUEST_URI} !^/yiipro/frontend/web
+
+RewriteRule ^(.*)$ /yiipro/frontend/web/$1 [L]
