@@ -1,11 +1,5 @@
 RewriteEngine On
-
-RewriteCond %{REQUEST_URI} !^/yiipro/frontend/web/
-
+RewriteBase /yiipro/frontend/web/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-
-RewriteRule ^(.*)$ /yiipro/frontend/web/$1
-
-RewriteCond %{HTTP_HOST} ^(www.)?promosos.com$ 
-RewriteRule ^(/)?$ yiipro/frontend/web/index.php [L]
+RewriteRule ^(.*)$ index.php/$1 [L,QSA]
